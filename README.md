@@ -12,6 +12,10 @@ To cite our paper:
 }
 ```
 
-The labels to be released include subjective scores (e.g., aesthetics score), human-labeled heatmaps (e.g., artifact regions of distorted pixels) and misalignment tokens in the text prompts. The dataset contains 17,760 examples in Tensorflow Example format, consisting of 15,810 training examples, 995 development examples and 955 test examples.
+The labels to be released include subjective scores (e.g., aesthetics score), human-labeled heatmaps (e.g., artifact regions of distorted pixels) and misalignment tokens in the text prompts. The dataset contains 17,760 examples in Tensorflow Example format, consisting of 15,810 training examples, 995 development examples and 955 test examples. The dataset doesn't contain the original images, but only their filenames, which you can use to find the corresponding images from the original Pick-a-pic dataset.
 
 The labels are annotated on generated images from Pick-a-pic v1: https://stability.ai/research/pick-a-pic
+
+The tfrecord file can be loaded by [tf.data.TFRecordDataset](https://www.tensorflow.org/api_docs/python/tf/data/TFRecordDataset) directly.
+
+To match the misalignment labels to each token in the prompt, please see codes at https://github.com/google-research/google-research/tree/master/richhf_18k
