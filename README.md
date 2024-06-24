@@ -20,4 +20,4 @@ As the tfrecord files are stored with Git Large File Storage (LFS), before git c
 
 The tfrecord file can be loaded by [tf.data.TFRecordDataset](https://www.tensorflow.org/api_docs/python/tf/data/TFRecordDataset) directly.
 
-To match the misalignment labels to each token in the prompt, please see codes at https://github.com/google-research/google-research/tree/master/richhf_18k
+For **how to parse the tfrecord file** and match the misalignment labels to each token in the prompt, please see codes at https://github.com/google-research/google-research/tree/master/richhf_18k
