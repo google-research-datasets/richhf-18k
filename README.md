@@ -20,4 +20,16 @@ As the tfrecord files are stored with Git Large File Storage (LFS), before git c
 
 The tfrecord file can be loaded by [tf.data.TFRecordDataset](https://www.tensorflow.org/api_docs/python/tf/data/TFRecordDataset) directly.
 
+Each example contains the following 8 fields:
+* filename: The original image filename which can be mapped to images in pick-a-pic v1 dataset.
+* aesthetics_score: Aesthetics score.
+* artifact_score: Artifact score.
+* misalignment_score: Text-image misliagnment score.
+* overall_score: Overal score.
+* artifact_map: Artifact heatmap.
+* misalignment_map: Misalignment heatmap.
+* prompt_misalignment_label: Token-level labels for misaligned tokens in the prompt.
+
+All scores are the higher the better. For example, higher overall score indicates higher overal quality, and higher artifact score indicates less artifacts in the image.
+
 For **how to parse the tfrecord file** and match the misalignment labels to each token in the prompt, please see codes at https://github.com/google-research/google-research/tree/master/richhf_18k
